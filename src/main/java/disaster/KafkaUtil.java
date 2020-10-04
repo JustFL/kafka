@@ -1,6 +1,10 @@
-package disaster;
+package main.java.disaster;
 
-import kafka.admin.TopicCommand;
+import java.util.Arrays;
+import java.util.Properties;
+
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.NewTopic;
 
 public class KafkaUtil {
 	
@@ -8,26 +12,13 @@ public class KafkaUtil {
 		createTopic();
 	}
 	
-	/**
-	 * 创建一个主题  topic
-	 * kafka-topics.sh \
-	 * --create \
-	 * --zookeeper hadoop02:2181,hadoop01:2181/kafka \
-	 * --replication-factor 2 \
-	 * --partitions 5 \
-	 * --topic kafka_test
-	 */
+	
 	public static void createTopic() {
-		String[] ops = new String[] {
-				"--create", 
-				"--zookeeper", 
-				"hadoop02:2181,hadoop01:2181/kafka",
-				"--replication-factor", 
-				"2", 
-				"--partitions", 
-				"5", 
-				"--topic", 
-				"kafka_test" };
-		TopicCommand.main(ops);
+
+		Properties props = new Properties();
+		AdminClient admin = AdminClient.create(props);
+		NewTopic topic = new NewTopic("T1", 4, (short) 2);
+		admin.createTopics(Arrays.asList(topic));
+		admin.close();
 	}
 }

@@ -1,4 +1,4 @@
-package disaster;
+package main.java.disaster;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +38,7 @@ public class TestKafkaConsumer {
         props.put("enable.auto.commit", "true");
         //自动提交时间间隔
         props.put("auto.commit.interval.ms", "1000");
-        //序列化器
+        //反序列化器
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         //实例化一个消费者

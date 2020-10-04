@@ -1,4 +1,4 @@
-package disaster;
+package main.java.disaster;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
