@@ -26,12 +26,21 @@
       <scope>test</scope>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+	<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
 	<dependency>
 	    <groupId>org.apache.kafka</groupId>
-	    <artifactId>kafka_2.11</artifactId>
-	    <version>1.1.0</version>
+	    <artifactId>kafka-clients</artifactId>
+	    <version>2.6.0</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+	<dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>kafka_2.13</artifactId>
+	    <version>2.6.0</version>
+	</dependency>
+	
+
     
   </dependencies>
 
